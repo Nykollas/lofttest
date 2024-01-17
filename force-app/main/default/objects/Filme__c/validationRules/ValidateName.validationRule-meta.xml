@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateName</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Nome__c)),
+    OR(
+        CONTAINS(Nome__c, &quot;@&quot;),
+        CONTAINS(Nome__c, &quot;#&quot;),
+        CONTAINS(Nome__c, &quot;{&quot;),
+        CONTAINS(Nome__c, &quot;}&quot;),
+        CONTAINS(Nome__c, &quot;;&quot;)
+    )
+)</errorConditionFormula>
+    <errorMessage>Nome inválido</errorMessage>
+</ValidationRule>

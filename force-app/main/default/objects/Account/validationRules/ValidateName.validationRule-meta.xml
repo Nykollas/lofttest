@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateName</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(
+    REGEX(
+        Nome__c,
+        &quot;[a-zA-Z0-9 ]+&quot;
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Nome__c</errorDisplayField>
+    <errorMessage>Nome com caracteres especiais.</errorMessage>
+</ValidationRule>
